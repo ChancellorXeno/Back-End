@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <? 
-    $test = $mysqli->query("SELECT id FROM lists"); 
-    echo $test;
-    ?>
+<? require_once 'connect.php' ?>
+<form action="create.php" method="post">
+    List Name: <input type="text" name="naam" /><br><br>
+    <input type="submit" />
+</form>
+
+
+
 </body>
 </html>         

@@ -1,14 +1,24 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "password";
+function pdo_connect_mysql(){
+  $servername = "localhost";
+  $username = "root";
+  $password = "mysql";
 
-try {
-  $conn = new PDO("mysql:host=$servername;dbname=backend", $username, $password);
-  // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Connected successfully";
-} catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
+  try {
+    $pdo = new PDO("mysql:host=$servername;dbname=backend", $username, $password);
+    // set the PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+    return $pdo;
+  } catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+  }
 }
+$pdo = pdo_connect_mysql();
+
+include 'index.php';
+include 'create.php';
+include 'read.php';
+include 'update.php';
+include 'delete.php';
 ?>
