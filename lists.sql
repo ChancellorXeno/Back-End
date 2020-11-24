@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 14, 2020 at 05:20 AM
+-- Generation Time: Nov 24, 2020 at 04:19 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `lists` (
-  `id` int(255) NOT NULL,
-  `naam` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
+  `id` int(11) NOT NULL,
+  `naam` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -38,10 +38,7 @@ CREATE TABLE `lists` (
 --
 
 INSERT INTO `lists` (`id`, `naam`) VALUES
-(1, '0'),
-(2, '4'),
-(3, ''),
-(4, 'Test');
+(1, 'test');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +58,7 @@ ALTER TABLE `lists`
 -- AUTO_INCREMENT for table `lists`
 --
 ALTER TABLE `lists`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
