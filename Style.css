@@ -1,3 +1,15 @@
 body {
 background-color: grey;
 }
+.list {
+    background-color: bisque;
+    height: 110px;
+    width: 100px;
+}
+.buttons {
+    padding: 2px;
+    margin: 5px;
+    background-color: chartreuse;
+    text-decoration: none;
+    color: black;
+}

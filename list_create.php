@@ -7,7 +7,7 @@ if (!empty($_POST)) {
     $id = isset($_POST['id']) && !empty($_POST['id']) && $_POST['id'] != 'auto' ? $_POST['id'] : NULL;
     $naam = isset($_POST['naam']) ? $_POST['naam'] : '';
     
-    // prepare the insert query
+    // insert query
     $stmt = $pdo->prepare("INSERT INTO lists (id, naam) VALUES (:id, :naam)");
     $stmt->execute(['id'=>$id, 'naam'=>$naam]);
 }

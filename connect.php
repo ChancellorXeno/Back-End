@@ -16,9 +16,8 @@ function pdo_connect_mysql(){
 }
 $pdo = pdo_connect_mysql();
 
-include 'index.php';
-include 'create.php';
-include 'read.php';
-include 'update.php';
-include 'delete.php';
+include 'list_create.php';
+include 'list_read.php';
+include 'list_update.php';
+include 'list_delete.php';
 ?>
