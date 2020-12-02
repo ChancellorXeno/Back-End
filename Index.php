@@ -8,7 +8,7 @@
 </head>
 <body>
 <form action="list_create.php" method="post">
-    List Name: <input type="text" name="naam" /><br><br>
+    List Name: <input type="text" name="name" /><br><br>
     <input type="submit" />
 </form>
 <? 

@@ -17,6 +17,4 @@ function pdo_connect_mysql(){
 $pdo = pdo_connect_mysql();
 
 include 'list_read.php';
-// include 'list_update.php';
-// include 'list_delete.php';
 ?>

@@ -4,10 +4,11 @@ include "connect.php";
 if (!empty($_POST)) {
     // collect id and name
     $id = isset($_POST['id']) && !empty($_POST['id']) && $_POST['id'] != 'auto' ? $_POST['id'] : NULL;
-    $naam = isset($_POST['naam']) ? $_POST['naam'] : '';
+    $name = isset($_POST['name']) ? $_POST['name'] : '';
     
     // insert query
-    $stmt = $pdo->prepare("INSERT INTO lists (id, naam) VALUES (:id, :naam)");
-    $stmt->execute(['id'=>$id, 'naam'=>$naam]);
+    $stmt = $pdo->prepare("INSERT INTO lists (id, name) VALUES (:id, :name)");
+    $stmt->execute(['id'=>$id, 'name'=>$name]);
+    header('Location: index.php');
 }
 ?>
