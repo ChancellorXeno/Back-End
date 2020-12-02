@@ -1,6 +1,5 @@
 <?
-require_once 'connect.php';
-function list_delete(){
+
     // Check that the contact ID exists
     if (isset($_GET['id'])) {
         // Select the record that is going to be deleted
@@ -26,5 +25,4 @@ function list_delete(){
     } else {
         exit('No ID specified!');
     }
-}
 ?>

@@ -1,6 +1,5 @@
 <?
-require_once 'connect.php';
-
+include "connect.php";
 // Check if POST data is not empty
 if (!empty($_POST)) {
     // collect id and name
