@@ -1,5 +1,5 @@
 <?
-
+include "connect.php";
     // Check that the contact ID exists
     if (isset($_GET['id'])) {
         // Select the record that is going to be deleted
