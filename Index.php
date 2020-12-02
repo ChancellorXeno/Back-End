@@ -13,7 +13,6 @@
 </form>
 <? 
 include 'connect.php';
-include 'list_read.php';
 ?> 
 </body>
 </html>
