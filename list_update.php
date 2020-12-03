@@ -1,26 +1,22 @@
 <?
 include "connect.php";
-echo 'made it this far fail (nailed)';
+var_dump($_POST);
 // initialize variables for the insert query
-echo $_GET['id'];
+echo '<br>';
 if (isset($_GET['id'])) {
-    echo 'made it this far 1 (nailed)';
-    if (!empty($_POST)) {
+    echo 'made it this far 1 (nailed)<br>';
+    if (!empty($_GET)) {
         $id = isset($_POST['id']) ? $_POST['id'] : NULL;
-        echo 'made it this far 2 (nailed)';
+        $name = isset($_POST['name']) ? $_POST['name'] : '';
+        echo 'made it this far 2 (nailed)<br>';
         // Update the record
-        $stmt = $pdo->prepare('UPDATE lists SET id = ?, name = ?, WHERE id = ?');
-       // $stmt->execute([$id, $name, $_GET['id']]);
-        $stmt->execute(['id'=>$id, 'name'=>'$name', $_GET['id']]);
+        $stmt = $pdo->prepare('UPDATE lists SET "id" = $id, "name" = $name, WHERE id = ?');
+        $stmt->execute(['id'=>$id, 'name'=>$name, $_GET['id']]);
         $msg = 'Updated Successfully!';
     }
-    // Get the contact from the contacts table
-    $stmt = $pdo->prepare('SELECT * FROM contacts WHERE id = ?');
-    $stmt->execute([$_GET['id']]);
-    $contact = $stmt->fetch(PDO::FETCH_ASSOC);
-    echo 'made it this far 3 (not nailed)';
-    if (!$contact) {
-        exit('Contact doesn\'t exist with that ID!');
-    }
+    echo 'made it this far 3 (not nailed)<br>';
+    header('Location: index.php');
+} else{
+    exit('No ID specified!');
 }
 ?>
